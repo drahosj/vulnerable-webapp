@@ -1,0 +1,40 @@
+<html>
+	<head>
+	</head>
+	<body>
+
+		<% unless file.nil? %>
+			<p> 
+				Contents of <%= file %>
+			</p>
+			<textarea 
+				rows="32" 
+    				cols="80" 
+				disabled="true"
+ 				style="resize: none" >
+<%= contents %>
+			</textarea>
+
+			<hr/>
+		<% end %>	
+
+		<table>
+			<th>
+				<td>Files available to view:</td>
+			</th>
+
+			<% files.each do |file| %>
+			<tr>
+				<td><%= file %></td>
+			</tr>
+			<% end %>
+
+		</table>
+
+		<form action="/path" method="GET">
+			View file:
+			<input type="text" name="file">
+			<input type="submit">
+		</form>
+	</body
+</html>

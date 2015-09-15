@@ -1,0 +1,33 @@
+<html>
+	<head>
+	</head>
+	<body>
+
+		<% unless message.nil? %>
+		<p>
+			<%= message %>
+		</p>
+		<% end %>
+
+		<table>
+			<tr>
+				<td>Name</td>
+				<td>Admin?</td>
+			</tr>
+
+			<% userinfo.each do |user| %>
+			<tr>
+				<td><%= user[0] %></td>
+				<td><%= user[1] %></td>
+			</tr>
+			<% end %>
+
+		</table>
+
+		<form action="/sql" method="POST">
+			Make user admin:
+			<input type="text" name="user">
+			<input type="submit">
+		</form>
+	</body
+</html>
